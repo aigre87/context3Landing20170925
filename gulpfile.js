@@ -38,7 +38,7 @@ var path = {
         styles:             'src/styles/*.+(sass|scss|css)',
         images:             'src/images/**/*.*',
         svg:                'src/svgIcons/*.svg',
-        sprite:             'src/sprite/*.*',
+        sprite:             'src/sprite/**/*.*',
         libs:               'src/libs/*.js',
         spriteTemplate:     'src/sass.template.mustache',
         svgSpriteTemplate:  'src/_sprite_template.scss',
