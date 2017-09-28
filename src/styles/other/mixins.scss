@@ -1,0 +1,37 @@
+@mixin spriteWidth($sprite) { width: nth($sprite, 5); }
+@mixin spriteHeight($sprite) { height: nth($sprite, 6); }
+@mixin spritePosition($sprite) { background-position: nth($sprite, 3) nth($sprite, 4); }
+@mixin spriteImage($sprite) {
+	$url:"../images/#{nth($sprite, 9)}";
+	background-image: url($url); 
+}
+
+// @mixin background-opacity($color, $opacity: 0.3) {
+//     background: $color; /* The Fallback */
+//     background: rgba($color, $opacity);
+// }
+
+@mixin sprite($sprite) {
+	@include spriteImage($sprite);
+	@include spritePosition($sprite);
+	@include spriteWidth($sprite);
+	@include spriteHeight($sprite);
+}
+/*5 - width, 6 - height*/
+$colors: (
+	link: #006199
+	// header: #333333,
+	// text: #333333,
+	// desc: #737373,
+	// lgray: #d8d8d8,
+	// purple: #822887,
+	// pink: #ed107a,
+	// dBlue: #005d97,
+	// lBlue: #1bbee8,
+	// ulBlue: #eefafa,
+	// green: #7fb310,
+	// yellow: #e6b317,
+	// lightBlueBlock: #eefafa,
+	// linkUnder: rgba(0, 93, 151, 0.3),
+	// linkUnderH: rgba(237, 16, 122, 0.3)
+);

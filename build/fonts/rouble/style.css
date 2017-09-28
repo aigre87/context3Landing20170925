@@ -1,0 +1,5 @@
+@font-face {
+  font-family: 'ALSRublRegular';
+  src: url("rouble-webfont.eot");
+  src: url("rouble-webfont.eot?#iefix") format("embedded-opentype"), url("rouble-webfont.woff") format("woff"), url("rouble-webfont.ttf") format("truetype"), url("rouble-webfont.svg#ALSRublRegular") format("svg");
+}
