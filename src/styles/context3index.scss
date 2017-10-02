@@ -8,6 +8,13 @@
   margin: 0 auto;
   max-width: 2560px;
 
+
+  input[type='submit']:disabled{
+    background: #999!important;
+    box-shadow: none!important;
+    color: #fff!important;
+    opacity: 0.5!important;
+  }
   .check1920lay{
     @media only screen and ( min-width: 1920px ) {
       display: none;
@@ -21,13 +28,13 @@
 
   .triggerHelper {
     position: absolute;
-    top: 50%;
+    top: 35%;
     height: 0;
     width: 100%;
     display: block;
     visibility: hidden;
     @media only screen and ( min-width: 1920px ) {
-      top: 35%;
+      top: 25%;
     }
   }
 
@@ -241,8 +248,7 @@
     }
     .blockBg {
       width: 1920px;
-      height: 0;
-      padding-top: 71.5%;
+      height: 200%;
       top: 50%;
       left: 50%;
       margin-left: -960px;
@@ -698,8 +704,7 @@
     }
     .blockBg {
       width: 1920px;
-      height: 0;
-      padding-top: 66.6%;
+      height: 200%;
       left: 50%;
       top: 50%;
       margin-left: -960px;
@@ -987,13 +992,18 @@
 
           input[type='email'],
           input[type='text']{
+            font-size: 16px;
+            line-height: 16px;
             height: 40px;
-            line-height: 40px;
             color: #000;
             border: 1px solid #bebebe;
             border-radius: 2px;
             background: #fff;
             padding: 0 19px;
+            margin-top: 10px;
+            &:first-child{
+              margin-top: 0;
+            }
 
             &::placeholder {
               color: #666666;
@@ -2106,8 +2116,9 @@
         input[type="phone"] {
           box-sizing: border-box;
           width: 350px;
+          font-size: 16px;
           height: 40px;
-          line-height: 40px;
+          line-height: 16px;
           border: none;
           padding: 0 19px;
           background: #c6ccd4;
@@ -2175,9 +2186,13 @@
           margin-bottom: 4px;
           top: 0;
 
-          &:active {
+          &:active,
+          &.loading{
             top: 4px;
             box-shadow: 0px 0px 0px 0px #76af43;
+          }
+          &.loading{
+            opacity: 0.6;
           }
         }
       }
@@ -2279,6 +2294,7 @@
 	    z-index: 2;
 	    margin: 0 auto;
 	    height: 100%;
+      transform: translateZ(1px);
 	  }
 
 	  .logo {
@@ -2334,8 +2350,9 @@
   }
 
   input[type='text'] {
+    font-size: 16px;
     height: 40px;
-    line-height: 40px;
+    line-height: 16px;
     color: #000;
     border: 1px solid #bebebe;
     border-radius: 2px;

@@ -4,6 +4,12 @@
   overflow: hidden;
   margin: 0 auto;
   max-width: 2560px; }
+  #homepage input[type='submit']:disabled {
+    background: #999 !important;
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+    color: #fff !important;
+    opacity: 0.5 !important; }
   @media only screen and (min-width: 1920px) {
     #homepage .check1920lay {
       display: none; } }
@@ -12,14 +18,14 @@
     z-index: 50; }
   #homepage .triggerHelper {
     position: absolute;
-    top: 50%;
+    top: 35%;
     height: 0;
     width: 100%;
     display: block;
     visibility: hidden; }
     @media only screen and (min-width: 1920px) {
       #homepage .triggerHelper {
-        top: 35%; } }
+        top: 25%; } }
   #homepage .rouble:before {
     font-family: "ALSRublRegular";
     content: 'p'; }
@@ -197,8 +203,7 @@
         padding-bottom: 115px; } }
     #homepage #b1 .blockBg {
       width: 1920px;
-      height: 0;
-      padding-top: 71.5%;
+      height: 200%;
       top: 50%;
       left: 50%;
       margin-left: -960px;
@@ -582,8 +587,7 @@
         margin-top: -12px; } }
     #homepage #b3 .blockBg {
       width: 1920px;
-      height: 0;
-      padding-top: 66.6%;
+      height: 200%;
       left: 50%;
       top: 50%;
       margin-left: -960px;
@@ -826,14 +830,19 @@
           margin: 0 auto; }
         #homepage #b4 .lay960 .formBlock form input[type='email'],
         #homepage #b4 .lay960 .formBlock form input[type='text'] {
+          font-size: 16px;
+          line-height: 16px;
           height: 40px;
-          line-height: 40px;
           color: #000;
           border: 1px solid #bebebe;
           -webkit-border-radius: 2px;
                   border-radius: 2px;
           background: #fff;
-          padding: 0 19px; }
+          padding: 0 19px;
+          margin-top: 10px; }
+          #homepage #b4 .lay960 .formBlock form input[type='email']:first-child,
+          #homepage #b4 .lay960 .formBlock form input[type='text']:first-child {
+            margin-top: 0; }
           #homepage #b4 .lay960 .formBlock form input[type='email']::-webkit-input-placeholder,
           #homepage #b4 .lay960 .formBlock form input[type='text']::-webkit-input-placeholder {
             color: #666666;
@@ -1735,8 +1744,9 @@
           -webkit-box-sizing: border-box;
                   box-sizing: border-box;
           width: 350px;
+          font-size: 16px;
           height: 40px;
-          line-height: 40px;
+          line-height: 16px;
           border: none;
           padding: 0 19px;
           background: #c6ccd4;
@@ -1819,10 +1829,12 @@
                   box-shadow: 0px 4px 0px 0px #76af43;
           margin-bottom: 4px;
           top: 0; }
-          #homepage #contacts .leftPanel form input[type='submit']:active {
+          #homepage #contacts .leftPanel form input[type='submit']:active, #homepage #contacts .leftPanel form input[type='submit'].loading {
             top: 4px;
             -webkit-box-shadow: 0px 0px 0px 0px #76af43;
                     box-shadow: 0px 0px 0px 0px #76af43; }
+          #homepage #contacts .leftPanel form input[type='submit'].loading {
+            opacity: 0.6; }
       #homepage #contacts .leftPanel .recallLink {
         cursor: pointer;
         font-size: 0;
@@ -1896,7 +1908,9 @@
       position: relative;
       z-index: 2;
       margin: 0 auto;
-      height: 100%; }
+      height: 100%;
+      -webkit-transform: translateZ(1px);
+              transform: translateZ(1px); }
     #homepage footer .logo {
       margin-left: 0px;
       position: relative;
@@ -1935,8 +1949,9 @@
     display: block;
     margin: 0 auto; }
   .getRecallForm input[type='text'] {
+    font-size: 16px;
     height: 40px;
-    line-height: 40px;
+    line-height: 16px;
     color: #000;
     border: 1px solid #bebebe;
     -webkit-border-radius: 2px;

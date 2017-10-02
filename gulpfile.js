@@ -82,7 +82,7 @@ gulp.task('libs:build', function() {
         //'src/libs/gsap/src/minified/plugins/ColorPropsPlugin.min.js',
         'src/libs/gsap/src/minified/plugins/ScrollToPlugin.min.js',
         //'src/libs/jquery-selectric/public/jquery.selectric.js',
-        //'src/libs/smoothscroll-for-websites/SmoothScroll.js',
+        'src/libs/smoothscroll-for-websites/SmoothScroll.js',
         //'src/libs/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js',
         'src/libs/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js',
         //'src/libs/jquery.inputmask/dist/inputmask/inputmask.extensions.js',
@@ -94,7 +94,7 @@ gulp.task('libs:build', function() {
         //'src/libs/owl.carousel/dist/owl.carousel.min.js',
         'src/libs/Snap.svg/dist/snap.svg.js',
         'src/libs/all.js',
-        'src/libs/scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js' 
+        //'src/libs/scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js' 
         ])
         //.pipe(plumber())
         .pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
