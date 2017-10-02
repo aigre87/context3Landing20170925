@@ -70,7 +70,7 @@
 	/*ОТКЛЮЧЕНИЕ ВКЛЮЧЕНИЕ СКРОЛА END*/
 
 	scroll(0,0);
-	var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter" }});
+	var controller = new ScrollMagic.Controller();
 
 	function getRandom(min, max) {
 	  return min + Math.random() * (max - min);
@@ -129,13 +129,9 @@
 			.add(function(){ TweenMax.staggerFromTo( $(".iconsRow .b4 .iw .text span"), 0.2, {autoAlpha:0, rotationX:-10, x: 20 }, {autoAlpha:1, rotationX:0, x: 0}, 0.025 ) })
 			.to($(".iconsRow .b4 .iconB"), 0.75, { ease: Back.easeOut.config(1.4), scale: 1, delay: 0.2 }, "b4")
 			.add( function(){ animateArrow("arrow4") }, "-=0.35" )
-			.add(function(){ TweenMax.staggerFromTo( $(".iconsRow .b5 .iw .text span"), 0.2, {autoAlpha:0, rotationX:-10, x: 20 }, {autoAlpha:1, rotationX:0, x: 0}, 0.025,
-			 	function(){
-			 		//загрузка каты после анимации
-					contactsMap();
-				});
-			})
-			.to($(".iconsRow .b5 .iconB"), 0.75, { ease: Back.easeOut.config(1.4), scale: 1, delay: 0.2 }, "b5");
+			.add(function(){ TweenMax.staggerFromTo( $(".iconsRow .b5 .iw .text span"), 0.2, {autoAlpha:0, rotationX:-10, x: 20 }, {autoAlpha:1, rotationX:0, x: 0}, 0.025 ) })
+			.to($(".iconsRow .b5 .iconB"), 0.75, { ease: Back.easeOut.config(1.4), scale: 1, delay: 0.2 }, "b5")
+			.add(function(){ contactsMap(); });
 
 		$("#b1 .button").on("click", function(){
 			disableScroll();
@@ -191,7 +187,7 @@
     	$oldActive.removeClass("active");
     	setTimeout(function(){
 				TweenMax.set( $oldActive , { zIndex: 0 });
-    	}, 2400);
+    	}, 250);
 
     	setTimeout(function(){
 	  		$newActive.addClass("active");
@@ -290,9 +286,9 @@
 						        success: function(response){
 						          submit.removeClass('loading');
 						          if( response.status == 'ok' ){
-							          $(".mfp-content .response").removeClass("error good").html("Ошибка сервера, попробуйте отправить еще раз или позвоните по телефону +7 (495) 772-97-92").addClass("error");
+							          $(".mfp-content .response").removeClass("error good").html("Ошибка сервера, попробуйте отправить еще раз или позвоните по телефону +7 (495) 120-32-30").addClass("error");
 						          }else{
-						          	$(".mfp-content .response").removeClass("error good").html("Заявка принята, спасибо. В ближайшее время мы свяжемся с вами<br/><br/>Если у вас есть вопросы - звоните, будем рады:<br/>+7 (495) 772-97-92").addClass("good");
+						          	$(".mfp-content .response").removeClass("error good").html("Заявка принята, спасибо. В ближайшее время мы свяжемся с вами<br/><br/>Если у вас есть вопросы - звоните, будем рады:<br/>+7 (495) 120-32-30").addClass("good");
 						          }
 
 
@@ -383,7 +379,7 @@
           if( response.status == 'ok' ){
 	          $.magnificPopup.open({
 	              items: {
-	                  src: "<div class='defaultPopupContent mfp-with-anim'>Ошибка сервера, попробуйте отправить еще раз или позвоните по телефону +7 (495) 772-97-92</div>",
+	                  src: "<div class='defaultPopupContent mfp-with-anim'>Ошибка сервера, попробуйте отправить еще раз или позвоните по телефону +7 (495) 120-32-30</div>",
 	                  type: 'inline'
 	              },
 	              removalDelay: 500, //delay removal by X to allow out-animation
@@ -402,7 +398,7 @@
           }else{
 	          $.magnificPopup.open({
 	              items: {
-	                  src: "<div class='defaultPopupContent mfp-with-anim'>Заявка принята, спасибо. В ближайшее время мы свяжемся с вами<br/><br/>Если у вас есть вопросы - звоните, будем рады:<br/>+7 (495) 772-97-92</div>",
+	                  src: "<div class='defaultPopupContent mfp-with-anim'>Заявка принята, спасибо. В ближайшее время мы свяжемся с вами<br/><br/>Если у вас есть вопросы - звоните, будем рады:<br/>+7 (495) 120-32-30</div>",
 	                  type: 'inline'
 	              },
 	              removalDelay: 500, //delay removal by X to allow out-animation
@@ -451,7 +447,13 @@
 	function contactsForm(){
 		var $form = $("#requestForm");
 
-		$form.find("input[name='name']").inputmask("*{2,40}",{ 
+		$form.find("input[name='name']").inputmask("A{2,40}",{ 
+				definitions: {
+			    "A": {
+			      validator: "[а-яА-ЯA-Za-z0-9 ]",
+			      cardinality: 1
+			    }
+			  },
         "onincomplete": function(){ 
         	$(this).removeClass("complete"); 
         	$(this).addClass("uncomplete");
@@ -460,7 +462,7 @@
         	$(this).addClass("complete");
         	$(this).removeClass("uncomplete");
         }
-    });		
+    });	
 		$form.find("input[name='email']").inputmask("email",{ 
         "onincomplete": function(){ 
         	$(this).removeClass("complete"); 
@@ -569,7 +571,7 @@
           if( response.status == 'ok' ){
 	          $.magnificPopup.open({
 	              items: {
-	                  src: "<div class='defaultPopupContent mfp-with-anim'>Ошибка сервера, попробуйте отправить еще раз или позвоните по телефону +7 (495) 772-97-92</div>",
+	                  src: "<div class='defaultPopupContent mfp-with-anim'>Ошибка сервера, попробуйте отправить еще раз или позвоните по телефону +7 (495) 120-32-30</div>",
 	                  type: 'inline'
 	              },
 	              removalDelay: 500, //delay removal by X to allow out-animation
@@ -588,7 +590,7 @@
           }else{
 	          $.magnificPopup.open({
 	              items: {
-	                  src: "<div class='defaultPopupContent mfp-with-anim'>Заявка принята, спасибо. В ближайшее время мы свяжемся с вами<br/><br/>Если у вас есть вопросы - звоните, будем рады:<br/>+7 (495) 772-97-92</div>",
+	                  src: "<div class='defaultPopupContent mfp-with-anim'>Заявка принята, спасибо. В ближайшее время мы свяжемся с вами<br/><br/>Если у вас есть вопросы - звоните, будем рады:<br/>+7 (495) 120-32-30</div>",
 	                  type: 'inline'
 	              },
 	              removalDelay: 500, //delay removal by X to allow out-animation
@@ -634,9 +636,26 @@
 	}
 
 	function paralaxBgs(){
-		TweenMax.set( $("#parallax1"), {y: "17%" });
-		TweenMax.set( $("#parallax2"), {y: "16%" });
-		TweenMax.set( $("#parallax3"), {y: "20%" });
+		var lay;
+		if( $('.check1920lay').is(':visible') ){
+			lay = "lt1920";
+		}else{
+			lay = "gt1920";
+		}
+
+		function isChangePageLayout() {
+			if( $('.check1920lay').is(':visible') && lay == "gt1920" ) {
+				lay = "lt1920";
+				return true;
+			} else if( !$('.check1920lay').is(':visible') && lay == "lt1920" ){
+				lay = "gt1920";
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+
 		var dur1,
 				dur2,
 				dur3;
@@ -644,33 +663,64 @@
 		function calcDur(){
 			var WH = $(window).height();
 
-			dur1 = $("#b1").outerHeight() > WH ? $("#b1").outerHeight() : WH;
-			dur2 = $("#b3").outerHeight() > WH ? $("#b3").outerHeight() : WH;
-			dur3 = $("#b6").outerHeight() > WH ? $("#b6").outerHeight() : WH;
+			dur1 = $("#b1").height()+50;
+			dur2 = $("#b3").height() > WH ? $("#b3").height() : WH;
+			dur3 = $("#b6").height() > WH ? $("#b6").height() : WH;
 		}
 		calcDur();
 
+		function createParalax(){
+			if( lay == "gt1920" ){
+				var p1Y = 26-50;
+				var p2Y = 27-50;
+				var p3Y = 21-50;
 
-		var scene1 = new ScrollMagic.Scene({triggerElement: "#b1" , duration: dur1*2 })
-						.setTween("#parallax1", {y: "-16%", ease: Linear.easeNone})
-						//.addIndicators()
-						.addTo(controller);
+				var p1YE = -50-26;
+				var p2YE = -50-26;
+				var p3YE = -50-17;
+			}else{
+			 	var p1Y = 26-50;
+			 	var p2Y = 22-50;
+			 	var p3Y = 20-50;
 
-		var scene2 = new ScrollMagic.Scene({triggerElement: "#b3" , duration: dur2*2 })
-						.setTween("#parallax2", {y: "-15%", ease: Linear.easeNone})
-						//.addIndicators()
-						.addTo(controller);
+				var p1YE = -50-20;
+				var p2YE = -50-24;
+				var p3YE = -50-17;
+			}
 
-		var scene3 = new ScrollMagic.Scene({triggerElement: "#b6" , duration: dur3*2 })
-						.setTween("#parallax3", {y: "-17%", ease: Linear.easeNone})
-						//.addIndicators()
-						.addTo(controller);
+
+			TweenMax.set( $("#parallax1"), {y: p1Y+"%" });
+			TweenMax.set( $("#parallax2"), {y: p2Y+"%" });
+			TweenMax.set( $("#parallax3"), {y: p3Y+"%" });
+
+			var scene1 = new ScrollMagic.Scene({triggerElement: "body" , duration: dur1, triggerHook: "onLeave" })
+							.setTween("#parallax1", {y: p1YE+"%", ease: Linear.easeNone})
+							//.addIndicators()
+							.addTo(controller);
+
+			var scene2 = new ScrollMagic.Scene({triggerElement: "#b3" , duration: dur2*2, triggerHook: "onEnter" })
+							.setTween("#parallax2", {y: p2YE+"%", ease: Linear.easeNone})
+							//.addIndicators()
+							.addTo(controller);
+
+			var scene3 = new ScrollMagic.Scene({triggerElement: "#b6" , duration: dur3*2, triggerHook: "onEnter" })
+							.setTween("#parallax3", {y: p3YE+"%", ease: Linear.easeNone})
+							//.addIndicators()
+							.addTo(controller);
+		}
+		createParalax();
+
 
 		$(window).on("debouncedresize", function( event ) {
-			calcDur();
-			scene1.duration(dur1*2);
-			scene2.duration(dur2*2);
-			scene3.duration(dur3*2);
+			if( isChangePageLayout() ){
+				calcDur();
+				createParalax();
+			}else{
+				calcDur();
+				scene1.duration(dur1);
+				scene2.duration(dur2*2);
+				scene3.duration(dur3*2);	
+			}
 		});
 	}
 

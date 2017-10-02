@@ -2,10 +2,17 @@
 @import "other/mixins";
 
 #homepage {
+
   font-family: "PT sans";
   overflow: hidden;
   margin: 0 auto;
-  max-width: 1920px;
+  max-width: 2560px;
+
+  .check1920lay{
+    @media only screen and ( min-width: 1920px ) {
+      display: none;
+    }
+  }
 
   .z1 {
     position: relative;
@@ -19,6 +26,9 @@
     width: 100%;
     display: block;
     visibility: hidden;
+    @media only screen and ( min-width: 1920px ) {
+      top: 35%;
+    }
   }
 
   .rouble:before {
@@ -224,11 +234,16 @@
     margin-top: -39px;
     padding-top: 103px;
     padding-bottom: 100px;
-
+    @media only screen and ( min-width: 1920px ) {
+      margin-top: -50px;
+      padding-top: 114px;
+      padding-bottom: 115px;
+    }
     .blockBg {
       width: 1920px;
-      height: 200%;
-      top: -50%;
+      height: 0;
+      padding-top: 71.5%;
+      top: 50%;
       left: 50%;
       margin-left: -960px;
       z-index: 1;
@@ -236,12 +251,16 @@
       background-image: url(../images/b1-bg.jpg);
       background-position: center center;
       background-size: 100%;
+      @media only screen and ( min-width: 1920px ) {
+        width: 2560px;
+        margin-left: -1280px;
+      }
     }
 
     &:after {
       content: '';
       position: absolute;
-      background: #006199;
+      background: #00619c;
       left: 0;
       top: 0;
       width: 100%;
@@ -452,7 +471,7 @@
 
       .buttonW {
         text-align: center;
-        margin-top: 46px;
+        margin-top: 32px;
 
         .button {
           display: inline-block;
@@ -487,14 +506,16 @@
     position: relative;
     padding-top: 33px;
     padding-bottom: 55px;
-
+    @media only screen and ( min-width: 1920px ) {
+      margin-top: -15px;
+    }
     &:before {
       content: '';
       z-index: 1;
       box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.55);
       transform-origin: 50% 50%;
       top: -44px;
-      height: 125px;
+      height: 165px;
       width: 150%;
       left: -25%;
       transform: rotate(2.6deg) translateZ(1px);
@@ -510,7 +531,7 @@
       box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.55);
       transform-origin: 50% 50%;
       bottom: -48px;
-      height: 155px;
+      height: 170px;
       width: 150%;
       left: -25%;
       transform: rotate(-2.6deg) translateZ(1px);
@@ -533,7 +554,10 @@
       transform: translateX(-50%);
       left: 50%;
       z-index: 1;
-
+      @media only screen and ( min-width: 1920px ) {
+        width: 2560px;
+        margin-left: -1280px;
+      }
       svg {
         position: relative;
         width: 100%;
@@ -667,23 +691,32 @@
     position: relative;
     padding-top: 148px;
     padding-bottom: 149px;
-
+    @media only screen and ( min-width: 1920px ) {
+      padding-top: 160px;
+      padding-bottom: 169px;
+      margin-top: -12px;
+    }
     .blockBg {
       width: 1920px;
-      height: 200%;
-      top: -50%;
+      height: 0;
+      padding-top: 66.6%;
       left: 50%;
+      top: 50%;
       margin-left: -960px;
       z-index: 0;
       background-image: url(../images/b3-bg.jpg);
       background-position: center center;
       background-size: 100%;
+      @media only screen and ( min-width: 1920px ) {
+        width: 2560px;
+        margin-left: -1280px;
+      }
     }
 
     &:after {
       content: '';
       position: absolute;
-      background: #b5e4ff;
+      background: #9fe5ff;
       left: 0;
       top: 0;
       width: 100%;
@@ -716,7 +749,7 @@
         .b {
           display: flex;
           flex-direction: column;
-          width: 235px;
+          width: 250px;
 
           .logoB {
             .logo {
@@ -733,6 +766,7 @@
             line-height: 24px;
             color: #2c2c2c;
             margin-top: 8px;
+            text-align: center;
           }
 
           .desc {
@@ -740,6 +774,7 @@
             font-size: 20px;
             line-height: 24px;
             margin-top: 15px;
+            text-align: center;
           }
         }
 
@@ -844,14 +879,16 @@
   #b4 {
     position: relative;
     padding-top: 22px;
-
+    @media only screen and ( min-width: 1920px ) {
+      margin-top: -20px;
+    }
     &:before {
       content: '';
       z-index: 0;
       box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.55);
       transform-origin: 50% 50%;
       top: -60px;
-      height: 145px;
+      height: 170px;
       width: 150%;
       left: -25%;
       transform: rotate(3.5deg) translateZ(1px);
@@ -951,12 +988,12 @@
           input[type='email'],
           input[type='text']{
             height: 40px;
+            line-height: 40px;
             color: #000;
             border: 1px solid #bebebe;
             border-radius: 2px;
             background: #fff;
             padding: 0 19px;
-            height: 40px;
 
             &::placeholder {
               color: #666666;
@@ -1155,7 +1192,7 @@
               left: 0;
               top: 0;
               content: '';
-              background: #003780;
+              background: #003383;
               opacity: 0.8;
               display: block;
               width: 100%;
@@ -1658,17 +1695,19 @@
       height: calc(100% + 100px);
       width: 150%;
       left: -25%;
-      transform: rotate(-2.9deg) translateZ(1px);
+      transform: rotate(-2.8deg) translateZ(1px);
       overflow: hidden;
-      background: #ffa200;
+      background: #ffa300;
       bottom: -50px;
       box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.55);
-
+      @media only screen and ( min-width: 1920px ) {
+        bottom: -62px;
+        height: calc(100% + 137px);
+      }
       .img {
         position: absolute;
         z-index: 1;
-        height: 200%;
-        top: -50%;
+        height: 0;
         opacity: 0.6;
         background-image: url(../images/b6-bg.jpg);
         background-position: center center;
@@ -1676,11 +1715,16 @@
         background-size: 100%;
         position: absolute;
         left: 50%;
+        top: 50%;
         margin-left: -980px;
         width: 1940px;
-        height: 200%;
-        transform: rotate(2.9deg) translateZ(1px);
+        padding-top: 66.6%;
+        transform: rotate(2.8deg) translateZ(1px);
         position: relative;
+        @media only screen and ( min-width: 1920px ) {
+          width: 2620px;
+          margin-left: -1320px;
+        }
       }
     }
 
@@ -1770,6 +1814,9 @@
   #contacts {
     height: 830px;
     position: relative;
+    @media only screen and ( min-width: 1920px ) {
+      height: 867px;
+    }
 
     #homepageContactsMap {
       width: 100%;
@@ -2013,6 +2060,9 @@
         width: 452px;
         float: right;
         padding-top: 161px;
+        @media only screen and ( min-width: 1920px ) {
+          padding-top: 173px;
+        }
       }
 
       .title {
@@ -2057,6 +2107,7 @@
           box-sizing: border-box;
           width: 350px;
           height: 40px;
+          line-height: 40px;
           border: none;
           padding: 0 19px;
           background: #c6ccd4;
@@ -2196,7 +2247,9 @@
 	  height: 82px;
 	  position: relative;
 	  z-index: 6;
-
+    @media only screen and ( min-width: 1920px ) {
+      margin-top: -25px;
+    }
 	  .blockBg {
 	    z-index: 1;
 	    box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.55);
@@ -2243,6 +2296,29 @@
 	    position: relative;
 	    top: 3px;
 	  }
+    a {
+      text-decoration: none;
+      color: #003ea5;
+      position: relative;
+
+      &:after {
+        height: 1px;
+        width: 100%;
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0px;
+        display: block;
+        background: #003ea5;
+        transition: all 0.12s ease-in-out;
+      }
+
+      &:hover {
+        &:after {
+          background: transparent;
+        }
+      }
+    }
 	}
 
 }
@@ -2259,12 +2335,12 @@
 
   input[type='text'] {
     height: 40px;
+    line-height: 40px;
     color: #000;
     border: 1px solid #bebebe;
     border-radius: 2px;
     background: #fff;
     padding: 0 19px;
-    height: 40px;
     margin-bottom: 15px;
     &:first-child{
     	margin-top: 0;

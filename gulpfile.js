@@ -14,6 +14,7 @@ var gulp        = require('gulp'),
     rename      = require('gulp-rename'),       // Подключаем библиотеку для переименования файлов
     cache       = require('gulp-cache'),        // Подключаем библиотеку кеширования
     //sftp        = require('gulp-sftp'),
+    tiny = require('gulp-tinypng-nokey'),
     spritesmith = require('gulp.spritesmith'),
     plumber     = require('gulp-plumber'),      // Ловим ошибки, чтобы не прервался watch
     svgSprite   = require('gulp-svg-sprite'),
@@ -93,7 +94,7 @@ gulp.task('libs:build', function() {
         //'src/libs/owl.carousel/dist/owl.carousel.min.js',
         'src/libs/Snap.svg/dist/snap.svg.js',
         'src/libs/all.js',
-        //'src/libs/scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js' 
+        'src/libs/scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js' 
         ])
         //.pipe(plumber())
         .pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
@@ -120,12 +121,14 @@ gulp.task('fonts:build', function() {
 gulp.task('image:build', function () {
     gulp.src(path.src.images)
         .pipe(plumber())
-        .pipe(cache(imagemin({
-            progressive: true,
-            svgoPlugins: [{removeViewBox: false}],
-            use: [pngquant()],
-            interlaced: true
-        })))
+        // .pipe(imagemin({
+        //     progressive: true,
+        //     svgoPlugins: [{removeViewBox: false}],
+        //     use: [pngquant()],
+        //     optimizationLevel: 5,
+        //     interlaced: true
+        // }))
+        .pipe(tiny())
         .pipe(plumber.stop())
         .pipe(gulp.dest(path.build.images));
         // .pipe(sftp({

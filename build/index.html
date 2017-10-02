@@ -3,11 +3,17 @@
 <html lang="en" id="html">
 
 <head>
-
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-PC6KVWT');</script>
+	<!-- End Google Tag Manager -->
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=1024">
 
-	<title>test1</title>
+	<title>b2b</title>
 	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&load=package.full,panorama.isSupported,panorama.locate,panorama.createPlayer,panorama.Player" type="text/javascript"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" async></script>
 	<script>
@@ -29,7 +35,12 @@
 </head>
 
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PC6KVWT"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <div id="homepage">
+	<div class="check1920lay"></div>
 	<header class="z1">
 		<div class="blockBg"><div class="img"></div></div>
 		<div class="lay960">
@@ -172,15 +183,15 @@
 							<div class="t2">на одежду</div>
 						</div>
 						<div class="middle">7 <span class="rouble"></span> за клик,<br />фиксированная цена</div>
-						<div class="linkBlock"><a href="#">Подробнее о ценах</a></div>
+						<div class="linkBlock"><a target="_blank" href="http://context3.mobiguru.ru/tariffs.html#cpc-click">Подробнее о ценах</a></div>
 					</div>
 					<div class="b b2">
 						<div class="top">
 							<div class="t1">СРС</div>
 							<div class="t2">на технику</div>
 						</div>
-						<div class="middle">от 5 <span class="rouble"></span> за клик, аукционная<br />система размещениц<br />предложений</div>
-						<div class="linkBlock"><a href="#">Подробнее о ценах</a></div>
+						<div class="middle">от 5 <span class="rouble"></span> за клик, аукционная<br />система размещения<br />предложений</div>
+						<div class="linkBlock"><a target="_blank" href="http://context3.mobiguru.ru/tariffs.html#cpa-ticket">Подробнее о ценах</a></div>
 					</div>
 					<div class="b b3">
 						<div class="top">
@@ -188,7 +199,7 @@
 							<div class="t2">на аксессуары</div>
 						</div>
 						<div class="middle">5 <span class="rouble"></span> за клик,<br />фиксированная цена</div>
-						<div class="linkBlock"><a href="#">Подробнее о ценах</a></div>
+						<div class="linkBlock"><a target="_blank" href="http://context3.mobiguru.ru/tariffs.html#cpa-purchases">Подробнее о ценах</a></div>
 		
 					</div>
 				</div>
@@ -208,7 +219,7 @@
 						<div class="name">mobiguru.ru</div>
 					</div>
 					<div class="desc">
-						телефоны, ноутбуки,<br />планшеты, эл.книги<br />фотоаппараты и<br />прочие гаджеты
+						гаджеты и электроника
 					</div>
 				</div>
 				<div class="b b2">
@@ -217,7 +228,7 @@
 						<div class="name">marketguru.ru</div>
 					</div>
 					<div class="desc">
-						140 товарных категорий,<br />включая одежду, DIY,<br />спорттовары
+						от спорттоваров до одежды и DIY
 					</div>
 				</div>
 				<div class="b b3">
@@ -226,7 +237,7 @@
 						<div class="name">techguru.ru</div>
 					</div>
 					<div class="desc">
-						крупная и мелкая<br />бытовая техника
+						техника для дома и дачи
 					</div>
 				</div>
 			</div>
@@ -246,7 +257,7 @@
 			<div class="lay960">
 				<div class="title">Наши преимущества</div>
 				<ul>
-					<li>Оплата только за CPC. От нас приходит покупатель, а магазин работает над ростом его лояльности и увеличению чека.</li>
+					<li>Оплата только за CPC. От нас приходит покупатель, а вы уже работаете над ростом его лояльности и увеличением среднего чека</li>
 					<li>У нас все в порядке с автоматизацией: регулярное обновление прайса, возможность работы по API и т.д.</li>
 					<li>Подробная статистика в личном кабинете.</li>
 					<li>Лояльная аудитория, которая приходит к нам за покупкой. Об этом говорит тот факт, что 50% покупателей возвращаются за новыми покупками.</li>
@@ -255,9 +266,10 @@
 				</ul>
 				<div class="formBlock">
 					<div class="formBlock__title">
-						Оставьте свой e-mail и мы отправим вам персональное предложение:
+						Оставить заявку
 					</div>
-					<form action="" id="getOfferFrom">
+					<form action="/ajax/b2b_offer/" id="getOfferFrom">
+						<input type="text" placeholder="Имя" class="ajax" name="name">
 						<input type="text" placeholder="E-mail" class="ajax" name="email">
 						<input type="submit" value="Отправить">
 					</form>
@@ -272,7 +284,7 @@
 						</div>
 					</div>
 					<div class="phoneBlock">
-						Телефон: <a href="tel:+74951203230">+7 (495)120-32-30</a>
+						Телефон: <a href="tel:+74951203230">+7 (495) 120-32-30</a>
 					</div>
 				</div>
 			</div>
@@ -544,7 +556,7 @@
 				<div class="item green">Целевой<br />трафик</div>
 				<div class="item blue">Персональный<br />подход</div>
 				<div class="item pink">Низкие<br />ставки</div>
-				<div class="item sea">Полную<br />конфиденциальность</div>
+				<div class="item sea">Доброжелательность</div>
 				<div class="item purple">Прозрачную<br />статистику</div>
 			</div>
 		</div>
@@ -562,7 +574,7 @@
 				<div class="title">
 					Оставить заявку
 				</div>
-				<form id="requestForm" action="/save/registration/">
+				<form id="requestForm" action="/ajax/b2b_registration/">
 					<div class="inputW"><input class="ajax" placeholder="Имя" type="text" name="name"><span class="must">*</span></div>
 					<div class="inputW"><input class="ajax" placeholder="E-mail" type="text" name="email"><span class="must">*</span></div>
 					<div class="inputW"><input class="ajax" placeholder="Телефон" type="phone" name="phone"><span class="must">*</span></div>
@@ -577,7 +589,7 @@
 							</span>
 						</div>
 						<div class="desc">
-							Вы соглашаетесь с условиями обработки персональных данных (<a href="#">ознакомиться</a>).
+							Вы соглашаетесь с условиями обработки персональных данных (<a target="_blank" href="http://marketguru.ru/legal/">ознакомиться</a>).
 						</div>
 					</div>
 					<input type="submit" value="Подключить магазин">
@@ -602,15 +614,16 @@
 				</svg>
 			</div>
 			<div class="copyrightText">
-				&copy; 2017 ООО «Гуру Проджектс» Все права защищены, или что тут еще обычно пишут;)
+				&copy; 2017 ООО «Гуру Проджектс». <a target="_blank" href="http://context3.mobiguru.ru/offer.html">Оферта</a>.
 			</div>
 		</div>
 	</footer>
-<form action="" class="getRecallForm">
-	<input placeholder="Телефон" class="ajax" type="text" name="phone">
-	<input placeholder="E-mail" class="ajax" type="text" name="email">
-	<input type="submit" value="Отправить">
-</form>
+	<form action="/ajax/b2b_mail/" class="getRecallForm">
+		<input placeholder="Имя" class="ajax" type="text" name="name">
+		<input placeholder="Телефон" class="ajax" type="text" name="phone">
+		<input placeholder="E-mail" class="ajax" type="text" name="email">
+		<input type="submit" value="Отправить">
+	</form>
 </div>
 </body>
 

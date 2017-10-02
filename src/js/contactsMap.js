@@ -296,7 +296,7 @@ function contactsMap(){
         var main = new ymaps.Placemark(myContactsMap.getCenter(), {
             balloonContent: '<div class="ballon">\
              <div class="title">Наши контакты</div>\
-             <div class="t1">Телефон: +7 (495)120-32-30</div>\
+             <div class="t1">Телефон: +7 (495) 120-32-30</div>\
              <div class="t2">Почта: <a href="mailto:newbusines@corpguru.ru">newbusines@corpguru.ru</a></div>\
              <div class="t3">Арес: 115280, Россия, Москва,<br/>ул. Ленинская Слобода, д.19,<br/>БЦ «Омега Плаза»</div>\
              <div class="closeBallon"></div>\
