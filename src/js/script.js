@@ -500,7 +500,6 @@
       $form.find("input[name='name']").one("focus", function(){
           $(this).click();
       }).inputmask("A{2,40}",{ 
-          "placeholder": "",
           definitions: {
               "A": {
                 validator: "[а-яА-ЯA-Za-z0-9 ]",
